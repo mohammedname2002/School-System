@@ -1,15 +1,12 @@
 <?php
 
+use App\Http\Controllers\Classrooms\ClassroomController;
+use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Sections\SectionController;
+use App\Http\Controllers\Students\PromotionController;
 use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\Teachers\TeacherController;
-use App\Http\Livewire;
-
-use App\Http\Controllers\Grades\GradeController;
-use App\Http\Controllers\Classrooms\ClassroomController;
-use App\Http\Controllers\Sections\SectionController;
-
-use App\Models\Classroom;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -70,6 +67,7 @@ Route::get('/classes/{id}' ,[SectionController::class,'getclasses' ]);
     Route::post('/Delete_attachment', [StudentController::class,'Delete_attachment'])->name('Delete_attachment');
 
 
+    Route::resource('Promotions', PromotionController::class);
 
 }
 

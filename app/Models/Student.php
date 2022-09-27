@@ -21,6 +21,7 @@ class Student extends Model
         return $this->belongsTo(Gender::class , 'gender_id');
     }
 
+
     // علاقة بين الطلاب والمراحل الدراسية لجلب اسم المرحلة في جدول الطلاب
 
     public function grade()

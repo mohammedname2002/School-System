@@ -55,8 +55,7 @@ return view('pages.Students.add' , $data);
         return $list_sections;
     }
     public function Store_Students( $request){
-DB::beginTransaction();
-
+        
         try {
 
      /*       $Students =new Student;
@@ -108,11 +107,8 @@ DB::beginTransaction();
             }
             toastr()->success(trans('messages.success'));
             return redirect()->route('Students.index');
-            DB::commit();
-
         }
         catch (Exception $e) {
-            DB::rollBack();
 
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
